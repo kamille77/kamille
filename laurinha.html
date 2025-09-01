@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário</title>
+</head>
+<body>
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ffcce6, #b3e0ff);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff66b2;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+        }
+
+        .cake-container {
+            position: relative;
+            margin: 30px auto;
+            width: 300px;
+            height: 280px;
+        }
+
+        .cake {
+            width: 250px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cake-base {
+            width: 250px;
+            height: 80px;
+            background: #f9c7b3;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            bottom: 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake-middle {
+            width: 200px;
+            height: 60px;
+            background: #ff9d9d;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            bottom: 80px;
+            left: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake-top {
+            width: 150px;
+            height: 50px;
+            background: #b3e0ff;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            bottom: 140px;
+            left: 50px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .candles {
+            position: absolute;
+            bottom: 190px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .candle {
+            width: 12px;
+            height: 45px;
+            background: linear-gradient(to right, #ff9d9d, #ffcc80, #ff9d9d);
+            position: relative;
+            margin: 0 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .candle:hover {
+            transform: scale(1.1);
+        }
+
+        .flame {
+            width: 16px;
+            height: 30px;
+            background: radial-gradient(#ffef00, #ff8800);
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            bottom: 45px;
+            left: -2px;
+            animation: flicker 0.8s infinite alternate;
+            cursor: pointer;
+            box-shadow: 0 0 15px #ff8800;
+        }
+
+        .decorations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .decoration {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .decoration:nth-child(1) {
+            background: #ff66b2;
+            top: 30px;
+            left: 30px;
+        }
+
+        .decoration:nth-child(2) {
+            background: #66b2ff;
+            top: 20px;
+            right: 40px;
+        }
+
+        .decoration:nth-child(3) {
+            background: #66ff66;
+            bottom: 90px;
+            left: 50px;
+        }
+
+        .decoration:nth-child(4) {
+            background: #ffcc66;
+            bottom: 80px;
+            right: 30px;
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .instructions {
+            background: #ffef80;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .balloons {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .balloon {
+            width: 50px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 10px;
+            position: relative;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .balloon:before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background: #333;
+        }
+
+        .balloon:nth-child(1) {
+            background: #ff66b2;
+            animation-delay: 0s;
+        }
+
+        .balloon:nth-child(2) {
+            background: #66b2ff;
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(3) {
+            background: #66ff66;
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(4) {
+            background: #ffcc66;
+            animation-delay: 3s;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        button {
+            background: #ff66b2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: 'Comic Sans MS', cursive;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        button:hover {
+            background: #ff3399;
+            transform: scale(1.05);
+        }
+
+        .birthday-text {
+            font-size: 2rem;
+            color: #ff66b2;
+            margin-top: 20px;
+            display: none;
+            animation: textPop 1s forwards;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes blow {
+            0% { transform: translateX(0) scale(1); }
+            50% { transform: translateX(5px) scale(1.1); }
+            100% { transform: translateX(-5px) scale(0.9); }
+        }
+
+        @keyframes textPop {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+            .cake-container {
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parabéns!</h1>
+        
+        <div class="instructions">Assopre as velas clicando nelas!</div>
+        
+        <div class="cake-container">
+            <div class="cake">
+                <div class="cake-base"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-top"></div>
+                <div class="decorations">
+                    <div class="decoration"></div>
+                    <div class="decoration"></div>
+                    <div class="decoration"></div>
+                    <div class="decoration"></div>
+                </div>
+            </div>
+            
+            <div class="candles">
+                <div class="candle">
+                    <div class="flame" onclick="blowCandle(this)"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame" onclick="blowCandle(this)"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame" onclick="blowCandle(this)"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame" onclick="blowCandle(this)"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame" onclick="blowCandle(this)"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame" onclick="blowCandle(this)"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="message">
+            <p>Parabéns princesa pelo seu 6 aninhos, </p>
+            
+            <p>Que seu dia seja cheio de diversão, alegria e muitos presentes!</p>
+            <p>Você é uma menina especial e merece tudo de bom!</p>
+            <p>que papai do céu abençoe muito sua vida, te dando muita amor e proteção, que você cresça com essa luz e essa alegria que contagia todos ao seu redor, gosto muito de você princesa
+</p>
+        </div>
+        
+        <div id="birthdayText" class="birthday-text">Parabéns! Todas as velas foram assopradas!</div>
+        
+        <div class="balloons">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+        
+        <button onclick="createConfetti()">Clique para mais festa!</button>
+        <button onclick="resetCandles()">Acender velas novamente</button>
+    </div>
+
+    <script>
+        let candlesBlown = 0;
+        const totalCandles = 6;
+        
+        function blowCandle(candle) {
+            // Animação de assoprar
+            candle.style.animation = "blow 0.5s forwards";
+            
+            setTimeout(() => {
+                candle.style.display = 'none';
+                candlesBlown++;
+                
+                // Verifica se todas as velas foram assopradas
+                if (candlesBlown === totalCandles) {
+                    setTimeout(() => {
+                        document.getElementById('birthdayText').style.display = 'block';
+                        createConfetti();
+                        playSound();
+                    }, 500);
+                }
+            }, 400);
+        }
+        
+        function resetCandles() {
+            const flames = document.querySelectorAll('.flame');
+            flames.forEach(flame => {
+                flame.style.display = 'block';
+                flame.style.animation = 'flicker 0.8s infinite alternate';
+            });
+            
+            candlesBlown = 0;
+            document.getElementById('birthdayText').style.display = 'none';
+        }
+        
+        function createConfetti() {
+            const colors = ['#ff66b2', '#66b2ff', '#66ff66', '#ffcc66', '#cc66ff'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+                confetti.style.width = `${Math.random() * 10 + 5}px`;
+                confetti.style.height = `${Math.random() * 10 + 5}px`;
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        function playSound() {
+            // Para uma experiência completa, adicionaria um som de festa aqui
+            // Mas como é apenas HTML/CSS/JS, vamos simular com uma mensagem
+            console.log("🎵 Som de festa! 🎵");
+        }
+        
+        // Criar algum confetti inicial
+        window.onload = function() {
+            createConfetti();
+        };
+    </script>
+</body>
+</html>
