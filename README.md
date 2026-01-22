@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>social</title>
+    <link rel="shortcut icon" href="imagem do desafio.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Minhas redes sociais</h1>
+    <h2>Quem sou eu?</h2>
+          <img src="foto-perfil-guanabara.png" alt="">
+          <p>Meu nome é <strong>Gustavo Guanabara</strong> Sou professor de tecnologia desde de 1994 e hoje produzo conteúdo para quem está iniciando no ramo da programação e desenvolvimento de sites/aplicaçãoes. São muitos anos dentro de sala de aula, tentando mostrar de forma simples e objetiva alguns conceitps que muita gente iniciante acha muito difícil.</p>
+          <h2>Como falar comigo?</h2>
+          <ul> 
+            <li><img src="icone-youtube.png" alt=""> <a href="https://www.cursoemvideo.com" target="blank">/cursoemvideo</a> Se inscreve lá no meu canal do YouTube </li>
+            <li><img src="icone-github.png" alt=""> <a href="https://github.com" target="blank">/gustavoguanabara</a>- Acessa meu repositório público no GitHub </li>
+            <li><img src="icone-instagram.png" alt=""> <a href="https://www.instagram.com" target="blank">/gustavoguanabara</a>- Me segue lã no instragram    </li>
+            <li><img src="icone-linkedin.png" alt=""> <a href="https://br.linkedin.com" target="blank" >/guanabara</a> Me adiciona lá no Linkedin </li>
+            <li><img src="icone-twitter.png" alt=""><a href="https://twitter.com" target="blank">/gustavoguanabara</a> Me segue lá no Twitter </li>
+            <li><img src="icone-facebook.png" alt=""> <a href="https://www.facebook.com" target="blank">/gustavoguanabara</a> Me acompanha lá no facebook     </li>
+        
+
+
+
+
+
+
+
+
+
+          </ul>
+
+</body>
+</html>
