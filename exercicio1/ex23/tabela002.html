@@ -6,25 +6,41 @@
     <title>Tabelas</title>
 
     <style>
-        h1{
-            color: white;
-           
-        }
-       body{
-            background-image: url(img);
-            background-repeat: no-repeat;
-            background-size: cover
-        }
+        
+         body{
+            font-family: Arial, Helvetica, sans-serif;
+         }  
+    
+       
         table{
            width: 500px;
            border-collapse: collapse;
+           position: relative;
         }
+ caption{
+font-family: 1.5em;
+font-weight: bold;
+padding: 10px;
+background-color: lightgray;
+}
 
-        td, th{
-            color: white;
-            border: 1px solid white;
+ th{
+     color: white;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: rgb(45, 40, 40);
+            position: sticky;
+            top: 0;
+ }
+        td{
+            color: black;
+            border: 1px solid black;
             padding: 10px;
         }
+        tbody > tr:nth-child(2n){
+            background-color: lightgrey;
+        }
+
         thead, tfoot{
           background-color:gray;
           color: white;
@@ -33,7 +49,7 @@
             text-align: right;
         }
         td>a{
-            color: white;
+            color: black;
             text-decoration: none;
           
         }
@@ -51,10 +67,11 @@
     <h1>Uso de tabelas grandes</h1>
 
     <table>
+        <caption>População das Unidades Federativas</caption>
        <thead>
-<tr>
-            <th>Estado</th>
-            <th>População</th>
+<tr> 
+            <th scope="col">Estado</th>
+            <th scope="col" style="width: 70px;">População</th>
 
  </tr>
        </thead>
@@ -171,6 +188,47 @@
             </td>
             <td class="num">3 384 547</td>
     </tr>
+     <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>  <tr>
+            <td>
+               <a href="https://pt.wikipedia.org/wiki/Piau%C3%AD">Piauí</a>
+            </td>
+            <td class="num">3 384 547</td>
+    </tr>
 </tbody>
 
     <tfoot>
@@ -183,6 +241,7 @@
 
     </tfoot>
     </table>
+   
 
 </body>
 </html>
